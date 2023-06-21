@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="register-heading"><center>Welcome to Bartner</center></h1>
+<h2 class="register-heading"><center>Login</center></h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary mt-3" type="submit">Login</button>
+    </form>
+    <center><p>Don't have an account? Please e-mail wgozzard@protonmail.com.</p></center>
+    
+    <footer>
+        <div class>
+            <span><center><b>BETA VERSION 1.0</b></center></span>    
+        </div>
+    </footer>
+{% endblock %}

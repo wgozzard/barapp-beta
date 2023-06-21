@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><h1>Kona Craft Kitchen</h1></center>
+<div class="container">
+    <h3>I'm here to help you make the absolute best drink recommendations for your awesome guests! 🍹🍷🍺</h3>
+</div>
+<h6>Please type your question below: <i>(e.g., My table is looking for a bourbon with an oak taste)</i></h6>
+<form method="post" id="chatbot-form">
+    {% csrf_token %}
+    <input type="text" class="form-control" name="user_input" value="{{ request.POST.user_input }}">
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    <button type="submit" class="btn btn-secondary mt-3" name="clear_button" value="clear">Clear</button>
+</form>
+
+<hr style="background-color: white; height: 2px;">
+
+<footer>
+    <div class="footer-right">
+        <span>&copy; 2023 Powered by WiJe</span>
+    </div>
+    <div class="footer-left">
+        <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+    </div>
+</footer>
+
+<br>
+
+<div id="loading-spinner" class="spinner"></div>
+
+{% if response %}
+<div class="chat-response">
+    <p>{{ response|linebreaks }}</p>
+</div>
+{% endif %}
+
+<script>
+    // Function to show the loading spinner
+    function showLoadingSpinner() {
+        document.getElementById("loading-spinner").style.display = "block";
+    }
+
+    // Add event listener to the form submission
+    document.getElementById("chatbot-form").addEventListener("submit", function () {
+        showLoadingSpinner();
+    });
+
+    // Add event listener to the clear button
+    document.querySelector('button[name="clear_button"]').addEventListener("click", function () {
+        document.querySelector('input[name="user_input"]').value = "";
+    });
+</script>
+
+{% endblock content %}
