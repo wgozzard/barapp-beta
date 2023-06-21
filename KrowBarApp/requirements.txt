@@ -1,12 +1,12 @@
 aiohttp==3.8.4
 aiosignal==1.3.1
-asgiref @ file:///Users/ec2-user/ci_py311/asgiref_1678390266874/work
+asgiref==3.4.1
 async-timeout==4.0.2
 attrs==23.1.0
 certifi==2023.5.7
 charset-normalizer==3.1.0
 dataclasses-json==0.5.7
-Django @ file:///Users/ec2-user/ci_py311/django_1678411010555/work
+Django==3.2.6
 frozenlist==1.3.3
 greenlet==2.0.2
 gunicorn==20.1.0
@@ -26,11 +26,11 @@ pyspark==3.1.2
 python-dotenv==1.0.0
 PyYAML==6.0
 requests==2.31.0
-SQLAlchemy==2.0.15
-sqlparse @ file:///Users/ec2-user/ci_py311/sqlparse_1678394278812/work
+SQLAlchemy==1.4.25
+sqlparse==0.4.2
 tenacity==8.2.2
 tqdm==4.65.0
 typing-inspect==0.9.0
 typing_extensions==4.6.3
-urllib3==2.0.2
+urllib3==1.26.7
 yarl==1.9.2
