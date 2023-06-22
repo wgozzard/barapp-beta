@@ -4,9 +4,10 @@
 
 <center><h1>Kona Craft Kitchen</h1></center>
 <div class="container">
-    <h3>I'm here to help you make the absolute best drink recommendations for your awesome guests! 🍹🍷🍺</h3>
+    <h3>Looking for the best drink recommendations for your amazing guests, just ask Kevn! 🍹🍷🍺</h3>
 </div>
 <h6>Please type your question below: <i>(e.g., My table is looking for a bourbon with an oak taste)</i></h6>
+<h6>Remember to include the type of alcohol, i.e. merlot wine when asking Kevn</i></h6>
 <form method="post" id="chatbot-form">
     {% csrf_token %}
     <input type="text" class="form-control" name="user_input" value="{{ request.POST.user_input }}">
